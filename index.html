@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body onload="hideElement('main')">
+  
+    <header>
+
+    <h1>Gestor de Tarefas</h1>
+
+  </header>
+
+ 
+  <form id="login-form" class="login-form"  >
+
+<h1>Login</h1>
+    <input id="username" type="text" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button id="btn-login" type="button" onclick="login()">Entrar</button>
+
+
+  </form>
+
+
+  <main id="main" class="container">
+    <!-- Painel esquerdo: formulário -->
+    <section class="panel panel-form">
+      <h2>Adicionar Tarefas, <label id="name"></label></h2>
+      <form id="form-tarefa" class="task-form">
+        <input type="text" id="titulo-tarefa" placeholder="Título da tarefa" required>
+        <button type="submit">Adicionar</button>
+      </form>
+
+      <div id="api-output" class="api-output">
+        <!-- Dados externos (ex: Fato do dia) aparecerão aqui -->
+      </div>
+    </section>
+
+    <!-- Painel direito: lista -->
+    <section class="panel panel-list">
+      <h2>Lista de Tarefas</h2>
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+
+    <div id="export-section">
+      <button id="btn-exportar">Exportar Tarefas (TXT)</button>
+      <button id="btn-exportar-csv">Exportar Tarefas (CSV)</button>
+      <button id="btn-exportar-pdf">Exportar Tarefas (PDF)</button>
+
+    </div>
+
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
