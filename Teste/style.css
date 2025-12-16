@@ -1,0 +1,304 @@
+* /* =====================
+   Design System
+===================== */
+:root {
+  --bg-main: #cab9a3;
+  --panel-bg: #f1d3d3;
+  --card-bg: #fbfdff;
+
+  --primary: hsl(134, 88%, 27%);
+  --danger: hsl(356, 88%, 27%);
+  --accent: #6a8eb1;
+
+  --text-main: #4b1515;
+  --text-muted: #8a8f96;
+
+  --border-light: #9bc1e6;
+  --radius: 8px;
+}
+
+/* =====================
+   Reset & Base
+===================== */
+#loginBox{
+  
+  .login {
+  max-width: 360px;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.9);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px blue;
+  animation: fadeUp .6s ease;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 83%;
+  padding: 3px 36px 3px 3px;
+  margin-bottom: 3px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+
+.login button {
+  width: 100%;
+  background: var(--primary);
+  color: rgb(213, 212, 212);
+  border:blue;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-info {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+}
+
+
+* {
+  box-sizing: border-box;
+}
+ body {
+  
+  margin: 0;
+  padding: 20px;
+  color: var(--text-main);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+  background: radial-gradient(circle at top left, #f3e9dc 0%, transparent 60%),
+    radial-gradient(circle at bottom right, #d9c3a8 0%, transparent 60%),
+    linear-gradient(135deg, #cbb9a2, #e7dccb);;
+  margin: 0;
+  padding: 20px;
+  color: #4b1515;
+
+}
+
+
+
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* =====================
+   Layout
+===================== */
+.container {
+  font-family:Verdana, Geneva, Tahoma, sans-serif, italic;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+
+}
+
+/* Painéis */
+
+.panel {
+  background: #f1d3d3;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(20,20,30,0.06);
+  backdrop-filter: blur(6px);
+  background: rgba(241, 211, 211, 0.85);
+
+  animation: fadeUp .6s ease both;
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Form panel */
+.panel-form,
+.panel-list {
+  flex: 1 1 500px;
+  min-width: 320px;
+}
+
+/* =====================
+   Formulário
+===================== */
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+
+.task-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+
+
+/* Botões */
+.btn {
+  font-family: inherit;
+  padding: 10px 14px;
+  border: none;
+  border-radius: var(--danger);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+
+  transition: 
+    transform .15s ease,
+    opacity .15s ease,
+    box-shadow .15s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+.task-form button:hover,
+#export-section button:hover {
+  opacity: 0.9;
+}
+
+.task-form button:active {
+  transform: translateY(1px);
+}
+
+/* =====================
+   Lista de tarefas
+===================== */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+
+.task-title {
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.concluida .task-title {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Ações */
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-concluir {
+  background: var(--primary);
+  color: #27912e;
+}
+
+.btn-remover {
+  background: var(--danger);
+  color: #890808;
+}
+
+/* =====================
+   Exportação
+===================== */
+#export-section {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =====================
+   API Output
+===================== */
+.api-output {
+  font-style: italic;
+  text-align: center;
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  border: 1px dashed #0a3560;
+  font-size: 14px;
+  color: #043118;
+}
+
+/* =====================
+   Responsivo
+===================== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+<meta charset="UTF-8">
+<title>Gestor de Tarefas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header>
+<h1>Gestor de Tarefas</h1>
+</header>
+
+
+<section class="login panel" id="loginBox">
+<h3>Login</h3>
+<input type="text" id="username" placeholder="Usuário">
+<div class="password-wrapper">
+<input type="password" id="password" placeholder="Senha">
+<span class="toggle-password" onclick="togglePassword()">👁</span>
+</div>
+<button class="btn" onclick="login()">Entrar</button>
+<p class="login-info">Primeiro acesso cria o usuário</p>
+</section>
+
+
+<main id="app" class="container hidden">
+
+
+<section class="panel">
+<h2>Adicionar Tarefa</h2>
+<form id="form-tarefa" class="task-form">
+<input type="text" id="titulo-tarefa" placeholder="Título da tarefa" required>
+<select id="priority">
+<option value="Baixa">Baixa</option>
+<option value="Média">Média</option>
+<option value="Alta">Alta</option>
+</select>
+<button class="btn">Adicionar</button>
+</form>
+<button class="btn btn-danger" onclick="logout()">Sair</button>
+</section>
+
+
+<section class="panel">
+<h2>Lista de Tarefas</h2>
+<ul id="task-list" class="task-list"></ul>
+
+
+<div id="export-section">
+<button class="btn" onclick="exportTXT()">Exportar TXT</button>
+<button class="btn" onclick="exportCSV()">Exportar CSV</button>
+</div>
+</section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>

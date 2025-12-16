@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Tarefas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+ <h1>Gestor de Tarefas</h1>
+    </header>
+
+  
+
+<!-- APP -->
+<div class="container hidden" id="app">
+
+    <ul id="taskList"></ul>
+
+</div>
+        <!-- Painel esquerdo: formulário -->
+         <main class="container">
+    
+    <section class="panel panel-form">  
+      <div class="login" id="loginBox">
+          <h2>Login</h2>
+
+          <input type="text" id="username" placeholder="Usuário" required>
+
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Senha" required>
+          <span class="toggle-password" onclick="togglePassword()">👁</span>
+        </div>
+
+         <button onclick="login()">Entrar</button>
+        <p class="login-info">Primeiro acesso cria o usuário</p>
+      </div>
+
+      <h2>Adicionar Tarefa</h2>
+      <form id="form-tarefa" class="task-form">
+        <input type="text" id="titulo-tarefa" placeholder="Título da tarefa" required>
+        <button type="submit">Adicionar</button>
+      </form>
+
+       <h3>Prioridade</h3>
+    <form id="taskForm">
+
+        <select id="priority">
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+
+
+      <div id="api-output" class="api-output">
+        <!-- Dados externos (ex: Fato do dia) aparecerão aqui -->
+      </div>
+
+      <div class="container hidden" id="app">
+    
+   
+        </select>
+
+        <button>Adicionar</button>
+    </form>
+    <h3>Estado</h3>
+    <div class="filters">
+
+        <button onclick="setFilter('pending')">Pendente</button>
+        <button onclick="setFilter('done')">Concluída</button>
+        <button onclick="setFilter('alta')">Em curso</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <button class="logout" onclick="logout()">Sair</button>
+</div>
+      
+    </section>
+
+    <!-- Painel direito: lista -->
+    <section class="panel panel-list">
+      <h2>Lista de Tarefas</h2>
+      <ul id="task-list" class="task-list"></ul>
+      <div id="export-section">
+      <button id="btn-exportar">Exportar Tarefas (TXT)</button>
+      <button id="btn-exportar-csv">Exportar Tarefas (CSV)</button>
+    </div>
+
+    </section>
+
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
